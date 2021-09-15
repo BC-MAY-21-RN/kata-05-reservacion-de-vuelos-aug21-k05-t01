@@ -1,3 +1,4 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/cbed7d03d8063c6f43df/maintainability)](https://codeclimate.com/github/BC-MAY-21-RN/kata-05-reservacion-de-vuelos-aug21-k05-t01/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/cbed7d03d8063c6f43df/test_coverage)](https://codeclimate.com/github/BC-MAY-21-RN/kata-05-reservacion-de-vuelos-aug21-k05-t01/test_coverage)
 ![BrightCoders Logo](img/logo-bc.png)
 
 # Reservación de Vuelos
