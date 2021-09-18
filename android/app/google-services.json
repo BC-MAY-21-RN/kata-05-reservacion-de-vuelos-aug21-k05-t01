@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "723697772081",
+    "project_id": "flightreservation-632f1",
+    "storage_bucket": "flightreservation-632f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723697772081:android:fda52e8f0af0275f5fd710",
+        "android_client_info": {
+          "package_name": "com.reservaciondevuelos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723697772081-kg035mcdg0vmctrj0damb81frqf0p5f6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRJJS9VeEHVlkXLPPnjrnZGQ4yGqsxwLo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723697772081-kg035mcdg0vmctrj0damb81frqf0p5f6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
