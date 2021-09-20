@@ -7,15 +7,12 @@
  */
 
 import React from 'react';
-import type { Node } from 'react';
-import { SafeAreaView, Text } from 'react-native';
+import RegisterView from './src/screens/RegisterView'
 
-const App: () => Node = () => {
+const App = () => {
 
   return (
-    <SafeAreaView>
-      <Text>React Native App</Text>
-    </SafeAreaView>
+    <RegisterView />
   );
 };
 
