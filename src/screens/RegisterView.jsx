@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {View, ScrollView, TextInput,TouchableOpacity, Text, StyleSheet} from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import TextBox from '../components/TextBox';
+import CustomButton from '../components/CustomButton';
 
 const RegisterView = () => {
   const [textFirstName, setTextFirstName] = useState("");
@@ -69,13 +70,13 @@ const RegisterView = () => {
         </View>
         
         <View style={styles.boxButtonsSection}>          
-          <TouchableOpacity style={styles.buttonSection}>
-            <Text style={styles.textButonSection}>Sing Up</Text>
-          </TouchableOpacity>
+          <CustomButton 
+            text='Sign Up'
+          />
           <Text style={styles.centerSelf}>or</Text>
-          <TouchableOpacity style={styles.buttonSection}>
-            <Text style={styles.textButonSection}>Sing Up with Google</Text>
-          </TouchableOpacity>
+          <CustomButton 
+            text='Sign Up with Google'
+          />
         </View>
 
       </View>
@@ -103,6 +104,8 @@ const styles = StyleSheet.create({
   },
   centerSelf: {
     alignSelf: 'center',
+    marginBottom: 10,
+    marginTop: 10,
   },
   boxButtonsSection:{
     display: 'flex',
@@ -110,20 +113,6 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     marginTop: 15
   },
-  buttonSection: {
-    backgroundColor: '#7383f9',
-    width: '95%',
-    height: 40,
-    borderRadius: 8,
-    borderColor: '#7383f9',
-    justifyContent: 'center',
-  },
- textButonSection: {
-    fontSize: 15,
-    color: '#fff',
-    justifyContent: 'center',
-    alignSelf: 'center',
- }
 });
 
 
