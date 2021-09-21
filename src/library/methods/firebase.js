@@ -1,18 +1,18 @@
-export const createUser = () => {
+export const createUser = (email, password) => {
   auth()
-    .createUserWithEmailAndPassword('jane.doe@example.com', 'SuperSecretPassword!')
+    .createUserWithEmailAndPassword(email, password)
     .then(() => {
-      console.log('User account created & signed in!');
+      Alert.log('User account created & signed in!');
     })
     .catch(error => {
       if (error.code === 'auth/email-already-in-use') {
-        console.log('That email address is already in use!');
+        Alert.log('That email address is already in use!');
       }
 
       if (error.code === 'auth/invalid-email') {
-        console.log('That email address is invalid!');
+        Alert.log('That email address is invalid!');
       }
 
-      console.error(error);
+      Alert.error(error);
     });
 };
