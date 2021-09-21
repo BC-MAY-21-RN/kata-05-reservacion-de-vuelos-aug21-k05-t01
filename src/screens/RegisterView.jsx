@@ -67,6 +67,15 @@ const RegisterView = () => {
             text='Sign Up with Google'
           />
         </View>
+        <View
+          style={styles.labelContainer}
+        >
+          <Text
+            style={styles.label}
+          >
+            Already have an account? <Text style={styles.sectionIn}>Log in</Text> 
+          </Text>
+        </View>
       </View>
     </ScrollView> 
   );
@@ -78,8 +87,8 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
   title: {
-    color: '#7383f9',
-    fontSize: 20,
+    color: '#5c6ef8',
+    fontSize: 22,
     fontWeight: '800',
     marginBottom: 23,
   },
@@ -87,9 +96,11 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginBottom: 10,
     marginTop: 10,
+    color: '#4d4d4d',
   },
   textInputLabel: {
     marginBottom: 5,
+    color: '#4d4d4d',
   },
   passwordMessage: {
     color: '#4d4d4d',
@@ -98,6 +109,20 @@ const styles = StyleSheet.create({
   },
   checkBoxContainer: {
     marginBottom: 30,
+  },
+  labelContainer: {
+    marginTop: 40,
+    justifyContent: 'center',
+    alignContent: 'center',
+  },
+  label: {
+    fontSize: 16,
+    alignSelf: 'center',
+    color: '#4d4d4d',
+  },
+  sectionIn: {
+    color: '#5c6ef8',
+    textDecorationLine: 'underline',
   }
 });
 

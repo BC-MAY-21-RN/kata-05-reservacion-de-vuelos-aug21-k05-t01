@@ -10,7 +10,7 @@ const CheckBoxWithLabel = ({value, changeValue, children, disabled = false}) => 
       <CheckBox 
         disabled={disabled}
         value={value}
-        tintColors={{true: '#7383f9'}}
+        tintColors={{true: '#5c6ef8'}}
         onValueChange={(newValue) => changeValue(newValue)}
       />
       <Text

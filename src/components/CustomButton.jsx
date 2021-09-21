@@ -19,7 +19,7 @@ const CustomButton = ({onPress = () => {}, text}) => {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#7383f9',
+    backgroundColor: '#5c6ef8',
     width: '100%',
     height: 45,
     borderRadius: 8,
@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     justifyContent: 'center',
     alignSelf: 'center',
+    fontWeight: '700'
   }    
 });
 export default CustomButton;
