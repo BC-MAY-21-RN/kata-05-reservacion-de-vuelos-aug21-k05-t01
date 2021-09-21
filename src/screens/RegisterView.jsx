@@ -3,6 +3,7 @@ import {View, ScrollView, TextInput,TouchableOpacity, Text, StyleSheet} from 're
 import CheckBox from '@react-native-community/checkbox';
 import TextBox from '../components/TextBox';
 import CustomButton from '../components/CustomButton';
+import CheckBoxWithLabel from '../components/CheckBoxWithLabel';
 
 const RegisterView = () => {
   const [textFirstName, setTextFirstName] = useState("");
@@ -21,55 +22,43 @@ const RegisterView = () => {
         Sing Up
       </Text>
       <View>
-        <Text>First name</Text>
+        <Text style={styles.textInputLabel}>First name</Text>
         <TextBox 
           value={textFirstName}
           onChange={setTextFirstName}
         />
-        <Text>Email*</Text>
+        <Text style={styles.textInputLabel}>Email*</Text>
         <TextBox 
           value={textEmail}
           onChange={setTextEmail}
         />
-        <Text>Password*</Text>
+        <Text style={styles.textInputLabel} >Password*</Text>
         <TextBox 
           type='password'
           value={textPassword}
           onChange={setTextPassword}
         />        
-        <Text>Use 8 or more chearacters with a mix of letters, numbers, and symbols </Text>
-
-        <View
-          style={styles.checkBoxContainer}
+        <Text
+          style={styles.passwordMessage}
         >
-          <CheckBox 
-            disabled={false}
+          Use 8 or more characters with a mix of letters, numbers, and symbols.
+        </Text>
+        <View style={styles.checkBoxContainer}>
+          <CheckBoxWithLabel
             value={termsCheckBox}
-            onValueChange={(newValue) => {setTermsCheckBox(newValue)}}
-          />
-          <Text
-            style={styles.checkBoxText}          
+            changeValue={setTermsCheckBox}
           >
             I agree to the Terms and Prvacy policy.
-          </Text>
-        </View>
-        
-        <View
-          style={styles.checkBoxContainer}
-        >
-          <CheckBox 
-            disabled={false}
+          </CheckBoxWithLabel>
+          
+          <CheckBoxWithLabel
             value={subscribeCheckBox}
-            onValueChange={(newValue) => {setSubscribeCheckBox(newValue)}}
-          />
-          <Text
-           style={styles.checkBoxText}
+            changeValue={setSubscribeCheckBox}
           >
-            Subscribe for select product updates.
-          </Text>
+            Subscribe for select product updates
+          </CheckBoxWithLabel>
         </View>
-        
-        <View style={styles.boxButtonsSection}>          
+        <View>          
           <CustomButton 
             text='Sign Up'
           />
@@ -78,7 +67,6 @@ const RegisterView = () => {
             text='Sign Up with Google'
           />
         </View>
-
       </View>
     </ScrollView> 
   );
@@ -95,24 +83,22 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     marginBottom: 23,
   },
-  checkBoxContainer: {
-    alignContent: 'center',
-    flexDirection: 'row',
-  },
-  checkBoxText: {
-    alignSelf: 'center',
-  },
   centerSelf: {
     alignSelf: 'center',
     marginBottom: 10,
     marginTop: 10,
   },
-  boxButtonsSection:{
-    display: 'flex',
-    justifyContent: 'center',
-    alignContent: 'center',
-    marginTop: 15
+  textInputLabel: {
+    marginBottom: 5,
   },
+  passwordMessage: {
+    color: '#4d4d4d',
+    fontSize: 12,
+    marginBottom: 25,
+  },
+  checkBoxContainer: {
+    marginBottom: 30,
+  }
 });
 
 
