@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {View, ScrollView, TextInput,TouchableOpacity, Text, StyleSheet} from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
+import TextBox from '../components/TextBox';
 
 const RegisterView = () => {
   const [textFirstName, setTextFirstName] = useState("");
@@ -20,27 +21,21 @@ const RegisterView = () => {
       </Text>
       <View>
         <Text>First name</Text>
-        <TextInput 
-          type='Text'
-          onChangeText={setTextFirstName}
+        <TextBox 
           value={textFirstName}
-          style={styles.textField}
+          onChange={setTextFirstName}
         />
         <Text>Email*</Text>
-        <TextInput 
-          email={true}
-          onChangeText={setTextEmail}
+        <TextBox 
           value={textEmail}
-          style={styles.textField}
+          onChange={setTextEmail}
         />
         <Text>Password*</Text>
-        <TextInput 
+        <TextBox 
           type='password'
-          secureTextEntry={true} 
-          onChangeText={setTextPassword}
           value={textPassword}
-          style={styles.textField}
-        />
+          onChange={setTextPassword}
+        />        
         <Text>Use 8 or more chearacters with a mix of letters, numbers, and symbols </Text>
 
         <View
@@ -98,11 +93,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: '800',
     marginBottom: 23,
-  },
-  textField: {
-    borderWidth: 1,
-    borderColor: '#5c5c5c',
-    marginBottom: 15,
   },
   checkBoxContainer: {
     alignContent: 'center',
