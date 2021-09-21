@@ -14,7 +14,7 @@ const CheckBoxWithLabel = ({value, changeValue, children, disabled = false}) => 
         onValueChange={(newValue) => changeValue(newValue)}
       />
       <Text
-        style={styles.checkBoxText}          
+        style={styles.checkBoxText}  
       >
         {children}
       </Text>

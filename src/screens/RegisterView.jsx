@@ -19,7 +19,7 @@ const RegisterView = () => {
       <Text
         style={styles.title}
       >
-        Sing Up
+        Sign Up
       </Text>
       <View>
         <Text style={styles.textInputLabel}>First name</Text>
