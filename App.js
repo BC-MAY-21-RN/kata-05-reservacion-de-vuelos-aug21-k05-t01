@@ -6,13 +6,13 @@
  * @flow strict-local
  */
 import React from 'react';
-import { SafeAreaView} from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { Login } from './src/screens';
 
 const App = () => {
   return (
     <SafeAreaView>
-      <Login/>
+      <Login />
     </SafeAreaView>
   );
 };
