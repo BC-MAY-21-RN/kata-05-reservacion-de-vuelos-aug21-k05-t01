@@ -7,11 +7,13 @@
  */
 
 import React from 'react';
-import RegisterView from './src/screens/RegisterView/RegisterView'
+import RegisterView from './src/screens/RegisterView/RegisterView';
+import LoginView from './src/screens/LoginView/LoginView';
 
 const App = () => {
 
   return (
+    //<LoginView />
     <RegisterView />
   );
 };
