@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import {View, ScrollView, TextInput,TouchableOpacity, Text, StyleSheet} from 'react-native';
-import TextBox from '../components/TextBox';
-import TextBoxWithButton from '../components/TextBoxWithButton';
-import CustomButton from '../components/CustomButton';
-import CheckBoxWithLabel from '../components/CheckBoxWithLabel';
+import {View, ScrollView, Text} from 'react-native';
+import TextBox from '../../components/TextBox/TextBox';
+import TextBoxWithButton from '../../components/TextBoxWithButton/TextBoxWithButton';
+import CustomButton from '../../components/CustomButton/CustomButton';
+import CheckBoxWithLabel from '../../components/CheckBoxWithLabel/CheckBoxWithLabel';
+import {styles} from './RegisterViewStyle';
 
 const RegisterView = () => {
   const [textFirstName, setTextFirstName] = useState('');
@@ -47,50 +48,5 @@ const RegisterView = () => {
     </ScrollView> 
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-    marginTop: 8,
-  },
-  title: {
-    color: '#5c6ef8',
-    fontSize: 22,
-    fontWeight: '800',
-    marginBottom: 23,
-  },
-  centerSelf: {
-    alignSelf: 'center',
-    marginBottom: 10,
-    marginTop: 10,
-    color: '#4d4d4d',
-  },
-  textInputLabel: {
-    marginBottom: 5,
-    color: '#4d4d4d',
-  },
-  passwordMessage: {
-    color: '#4d4d4d',
-    fontSize: 12,
-    marginBottom: 25,
-  },
-  checkBoxContainer: {
-    marginBottom: 30,
-  },
-  labelContainer: {
-    marginTop: 40,
-    justifyContent: 'center',
-    alignContent: 'center',
-  },
-  label: {
-    fontSize: 16,
-    alignSelf: 'center',
-    color: '#4d4d4d',
-  },
-  sectionIn: {
-    color: '#5c6ef8',
-    textDecorationLine: 'underline',
-  }
-});
 
 export default RegisterView;

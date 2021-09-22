@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import RegisterView from './src/screens/RegisterView'
+import RegisterView from './src/screens/RegisterView/RegisterView'
 
 const App = () => {
 

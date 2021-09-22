@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import {TextInput, StyleSheet, View, TouchableOpacity} from 'react-native';
+import {TextInput, View, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {styles} from './TextBoxWithButtonStyle';
 
 const TextBoxWithButton = ({type = 'text', value, onChange}) => {
   const [showText, setShowText] = useState(false);
@@ -26,24 +27,5 @@ const TextBoxWithButton = ({type = 'text', value, onChange}) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  textField: {
-    borderWidth: 1,
-    borderColor: '#5c5c5c',
-    marginBottom: 15,
-    paddingLeft: 12,
-  },
-  iconContainer: {
-    position: 'absolute',
-    zIndex: 2,
-    right: 15,
-    top: 8,
-  },
-  icon: {
-    fontSize: 30,
-    color: '#4d4d4d',
-  },
-});
 
 export default TextBoxWithButton;

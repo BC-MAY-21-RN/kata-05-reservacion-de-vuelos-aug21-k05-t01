@@ -1,6 +1,7 @@
 import React from 'react';
 import CheckBox from '@react-native-community/checkbox';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text} from 'react-native';
+import {styles} from './CheckBoxWithLabelStyle';
 
 const CheckBoxWithLabel = ({value, changeValue, children, disabled = false}) => {
   return(
@@ -21,17 +22,5 @@ const CheckBoxWithLabel = ({value, changeValue, children, disabled = false}) => 
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  checkBoxText: {
-    alignSelf: 'center',
-    fontSize: 16,
-    color: '#4d4d4d',
-  },
-  checkBoxContainer: {
-    alignContent: 'center',
-    flexDirection: 'row',
-  },
-});
 
 export default CheckBoxWithLabel;

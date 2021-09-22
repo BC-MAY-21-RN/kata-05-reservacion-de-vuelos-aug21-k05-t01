@@ -1,5 +1,6 @@
 import React from 'react';
-import {TextInput, StyleSheet} from 'react-native';
+import {TextInput} from 'react-native';
+import {styles} from './TextBoxStyle';
 
 const TextBox = ({type = 'text', value, onChange}) => {
   return(
@@ -12,14 +13,5 @@ const TextBox = ({type = 'text', value, onChange}) => {
     />
   );
 };
-
-const styles = StyleSheet.create({
-  textField: {
-    borderWidth: 1,
-    borderColor: '#5c5c5c',
-    marginBottom: 15,
-    paddingLeft: 12,
-  },
-});
 
 export default TextBox;
