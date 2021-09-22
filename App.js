@@ -5,16 +5,14 @@
  * @format
  * @flow strict-local
  */
-
 import React from 'react';
-import type { Node } from 'react';
-import { SafeAreaView, Text } from 'react-native';
+import { SafeAreaView } from 'react-native';
+import { Login } from './src/screens';
 
-const App: () => Node = () => {
-
+const App = () => {
   return (
     <SafeAreaView>
-      <Text>React Native App</Text>
+      <Login />
     </SafeAreaView>
   );
 };
