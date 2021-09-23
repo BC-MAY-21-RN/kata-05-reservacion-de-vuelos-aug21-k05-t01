@@ -43,5 +43,12 @@ export const styles = StyleSheet.create({
   sectionIn: {
     color: colors.blue,
     textDecorationLine: 'underline',
+  },
+  inputContainer: {
+    marginBottom: 10,
+  },
+  buttonContainer: {
+    marginTop: 20,
+    marginBottom: 10,
   }
 });

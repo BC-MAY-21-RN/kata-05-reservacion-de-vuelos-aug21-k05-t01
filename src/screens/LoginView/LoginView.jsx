@@ -12,15 +12,15 @@ const LoginView = () => {
   return(
     <ScrollView style={styles.container}>
       <Text style={styles.title}>Sign In</Text>
-      <View style={{marginBottom: 10}}>
+      <View style={styles.inputContainer}>
         <Text style={styles.textInputLabel}>Email</Text>
         <TextBox style={styles.textInputLabel} value={email} onChange={setEmail} />
       </View>
-      <View>
+      <View style={styles.inputContainer}>
         <Text style={styles.textInputLabel}>Password</Text>
         <TextBoxWithButton style={styles.textInputLabel} type='password' value={password} onChange={setPassword}  />
       </View>
-      <View style={{marginTop: 30, marginBottom: 10}}>
+      <View style={styles.buttonContainer}>
         <CustomButton text='Sign In'/>
       </View>
       <View style={styles.labelContainer}>
