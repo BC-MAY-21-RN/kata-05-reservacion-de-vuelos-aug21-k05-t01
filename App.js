@@ -6,14 +6,11 @@
  * @flow strict-local
  */
 import React from 'react';
-import { SafeAreaView } from 'react-native';
-import { Login } from './src/screens';
+import RegisterView from './src/screens/RegisterView/RegisterView'
 
 const App = () => {
   return (
-    <SafeAreaView>
-      <Login />
-    </SafeAreaView>
+    <RegisterView />
   );
 };
 
