@@ -5,7 +5,7 @@ import TextBox from '../../components/TextBox/TextBox';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import {styles} from '../RegisterView/RegisterViewStyle';
 
-const LoginView = () => {
+const LoginView = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -25,7 +25,7 @@ const LoginView = () => {
       </View>
       <View style={styles.labelContainer}>
         <Text style={styles.label}>
-          Don´t have an account? <Text style={styles.sectionIn}>Sign Up</Text> 
+          Don´t have an account? <Text style={styles.sectionIn} onPress={() => navigation.navigate('Register')}>Sign Up</Text> 
         </Text>
       </View>
     </ScrollView>
