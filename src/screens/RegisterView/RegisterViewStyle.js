@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
   },
   textInputLabel: {
     marginBottom: 5,
+    marginRight: 6,
     color: colors.lightGray,
   },
   passwordMessage: {
@@ -50,5 +51,8 @@ export const styles = StyleSheet.create({
   buttonContainer: {
     marginTop: 20,
     marginBottom: 10,
+  },
+  flexRow: {
+    flexDirection: 'row'
   }
 });
