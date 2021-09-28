@@ -6,7 +6,7 @@ import CustomButton from '../../components/CustomButton/CustomButton';
 import CheckBoxWithLabel from '../../components/CheckBoxWithLabel/CheckBoxWithLabel';
 import {styles} from './RegisterViewStyle';
 
-const RegisterView = () => {
+const RegisterView = ({navigation}) => {
   const [textFirstName, setTextFirstName] = useState('');
   const [textEmail, setTextEmail] = useState('');
   const [textPassword,setTextPassword] = useState('');
@@ -41,7 +41,7 @@ const RegisterView = () => {
         </View>
         <View style={styles.labelContainer}>
           <Text style={styles.label}>
-            Already have an account? <Text style={styles.sectionIn}>Log in</Text> 
+            Already have an account? <Text style={styles.sectionIn} onPress={() => navigation.navigate('Login')}>Log in</Text> 
           </Text>
         </View>
       </View>
