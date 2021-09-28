@@ -3,8 +3,8 @@ import {Text, ScrollView, View} from 'react-native';
 import {useValidation} from 'react-native-form-validator';
 import TextBoxWithButton from '../../components/TextBoxWithButton/TextBoxWithButton';
 import TextBox from '../../components/TextBox/TextBox';
-import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import CustomButton from '../../components/CustomButton/CustomButton';
+import InputLabel from '../../components/InputLabel/InputLabel';
 import {styles} from '../RegisterView/RegisterViewStyle';
 
 const LoginView = ({navigation}) => {
@@ -27,17 +27,11 @@ const LoginView = ({navigation}) => {
     <ScrollView style={styles.container}>
       <Text style={styles.title}>Sign In</Text>
       <View style={styles.inputContainer}>
-        <View style={styles.flexRow}>
-          <Text style={styles.textInputLabel}>Email</Text>
-          <ErrorMessage errorMessages={getErrorsInField('email')}/>
-        </View>
+        <InputLabel errorMessages={getErrorsInField('email')}>Email</InputLabel>
         <TextBox style={styles.textInputLabel} value={email} onChange={setEmail} />
       </View>
       <View style={styles.inputContainer}>
-        <View style={styles.flexRow}>
-          <Text style={styles.textInputLabel}>Password</Text>
-          <ErrorMessage errorMessages={getErrorsInField('password')}/>
-        </View>
+        <InputLabel errorMessages={getErrorsInField('password')}>Password</InputLabel>
         <TextBoxWithButton style={styles.textInputLabel} type='password' value={password} onChange={setPassword}/>
       </View>
       <View style={styles.buttonContainer}>
