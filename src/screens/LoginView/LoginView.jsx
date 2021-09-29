@@ -6,20 +6,21 @@ import TextBox from '../../components/TextBox/TextBox';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import InputLabel from '../../components/InputLabel/InputLabel';
 import {styles} from '../RegisterView/RegisterViewStyle';
+import { firebaseLogin } from '../../library/methods/firebaseLogin';
 
 const LoginView = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const {validate, isFieldInError, getErrorsInField, getErrorMessages} = useValidation({state: { email, password }});
+  const {validate, isFieldInError, getErrorsInField} = useValidation({state: { email, password }});
 
   const onPressButton = () => {
     validate({
       email: { email: true, required: true },
       password: { minlength: 8, required: true },
-    });
+    });   
     if(!isFieldInError('email') && !isFieldInError('password')) {
-      alert('You logged in');
+      firebaseLogin(email, password, navigation);
     }
   };
 
