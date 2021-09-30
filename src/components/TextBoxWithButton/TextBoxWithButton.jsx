@@ -20,7 +20,7 @@ const TextBoxWithButton = ({type = 'text', value, onChange}) => {
         onPress={() => setShowText(!showText)}
       >
         <Icon 
-          name={showText ? 'eye-off' : 'eye'}
+          name={showText ? 'eye' : 'eye-off'}
           style={styles.icon}
         />
       </TouchableOpacity>

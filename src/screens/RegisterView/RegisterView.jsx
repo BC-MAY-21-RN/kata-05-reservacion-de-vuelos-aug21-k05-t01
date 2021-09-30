@@ -1,28 +1,51 @@
 import React, {useState} from 'react';
-import {View, ScrollView, Text} from 'react-native';
+import {View, ScrollView, Text, Alert} from 'react-native';
+import {useValidation} from 'react-native-form-validator';
 import TextBox from '../../components/TextBox/TextBox';
 import TextBoxWithButton from '../../components/TextBoxWithButton/TextBoxWithButton';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import CheckBoxWithLabel from '../../components/CheckBoxWithLabel/CheckBoxWithLabel';
+import InputLabel from '../../components/InputLabel/InputLabel';
 import {styles} from './RegisterViewStyle';
 
 const RegisterView = ({navigation}) => {
-  const [textFirstName, setTextFirstName] = useState('');
-  const [textEmail, setTextEmail] = useState('');
-  const [textPassword,setTextPassword] = useState('');
-  const [termsCheckBox, setTermsCheckBox] = useState(false);
+  const [firstName, setTextFirstName] = useState('');
+  const [email, setTextEmail] = useState('');
+  const [password,setTextPassword] = useState('');
+  const [termsCheckBox, setTermsCheckBox] = useState(true);
   const [subscribeCheckBox, setSubscribeCheckBox] = useState(false);
+  
+  const createNewUser = () => {
+    Alert.alert('Go'); 
+  };
+
+  const {validate, isFormValid, getErrorsInField} = useValidation({
+    state: { firstName, email, password, }
+  });
+  
+  const SingUp = () => {
+    validate({
+      firstName: { required: true  },
+      email: { email: true, required: true},
+      password: { minlength: 8, hasNumber:true, hasSpecialCharacter:true, required: true},
+    });
+    if (isFormValid()){
+      createNewUser();
+    }
+  };
 
   return(
     <ScrollView style={styles.container}>
       <Text style={styles.title}>Sign Up</Text>
       <View>
-        <Text style={styles.textInputLabel}>First name</Text>
-        <TextBox value={textFirstName} onChange={setTextFirstName}/>
-        <Text style={styles.textInputLabel}>Email*</Text>
-        <TextBox value={textEmail} onChange={setTextEmail}/>
-        <Text style={styles.textInputLabel}>Password*</Text>
-        <TextBoxWithButton type='password' value={textPassword} onChange={setTextPassword} />        
+        <InputLabel style={styles.textInputLabel} errorMessages={getErrorsInField('firstName')}>First Name</InputLabel>
+        <TextBox value={firstName} onChange={setTextFirstName}/>
+
+        <InputLabel style={styles.textInputLabel} errorMessages={getErrorsInField('email')}>Email</InputLabel>
+        <TextBox value={email} onChange={setTextEmail}/>
+        <InputLabel style={styles.textInputLabel} errorMessages={getErrorsInField('password')}>Password</InputLabel>
+        
+        <TextBoxWithButton type='password' value={password} onChange={setTextPassword} />        
         <Text style={styles.passwordMessage}>
           Use 8 or more characters with a mix of letters, numbers, and symbols.
         </Text>
@@ -35,7 +58,7 @@ const RegisterView = ({navigation}) => {
           </CheckBoxWithLabel>
         </View>
         <View>          
-          <CustomButton text='Sign Up'/>
+          <CustomButton disable={true} onPress={SingUp} text='Sign Up'/>
           <Text style={styles.centerSelf}>or</Text>
           <CustomButton text='Sign Up with Google' />
         </View>

@@ -18,13 +18,13 @@ const LoginView = ({navigation}) => {
 
   const onPressButton = async () => {
     const isFormValid = validate({
-      email: { email: true },
+      email: { email: true, required: true },
       password: { minlength: 8, required: true },
     });
     if(isFormValid) {
       setLoading(true);
       await firebaseLogin(email, password, navigation);
-      setLoading(false)
+      setLoading(false);
     }
   };
 
