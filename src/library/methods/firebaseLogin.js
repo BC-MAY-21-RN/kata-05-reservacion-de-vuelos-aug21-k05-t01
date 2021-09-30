@@ -1,4 +1,5 @@
 import auth from '@react-native-firebase/auth';
+import {Alert} from 'react-native';
 
 export const firebaseLogin = async (email, password, navigation) => {
   return await auth()
@@ -8,17 +9,17 @@ export const firebaseLogin = async (email, password, navigation) => {
     })
     .catch(error => {
       if (error.code === 'auth/email-already-in-use') {
-        alert('That email address is already in use!');
+        Alert.alert('That email address is already in use!');
       }
 
       if (error.code === 'auth/invalid-email') {
-        alert('That email address is invalid!');
+        Alert.alert('That email address is invalid!');
       }
 
-      if(error.code == 'auth/invalid-password') {
-        alert('Invalid password');
+      if(error.code === 'auth/invalid-password') {
+        Alert.alert('Invalid password');
       }
 
-      alert('Couldn´t log in');
+      Alert.alert('Couldn´t log in');
     });
 };
