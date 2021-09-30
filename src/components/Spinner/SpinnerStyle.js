@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
   },
   spinnerContainer: {
     top: -10,
-    backgroundColor: '#21252b',
+    backgroundColor: colors.light_black,
     width: 110,
     height: 130,
     padding: 8,
