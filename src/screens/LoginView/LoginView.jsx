@@ -14,14 +14,14 @@ const LoginView = ({navigation}) => {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const {validate, isFieldInError, getErrorsInField} = useValidation({state: { email, password }});
+  const {validate, getErrorsInField} = useValidation({state: { email, password }});
 
   const onPressButton = async () => {
-    validate({
-      email: { email: true, required: true },
+    const isFormValid = validate({
+      email: { email: true },
       password: { minlength: 8, required: true },
-    });   
-    if(!isFieldInError('email') && !isFieldInError('password')) {
+    });
+    if(isFormValid) {
       setLoading(true);
       await firebaseLogin(email, password, navigation);
       setLoading(false)
