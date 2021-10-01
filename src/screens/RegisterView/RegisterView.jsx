@@ -1,74 +1,90 @@
 import React, {useState} from 'react';
 import {View, ScrollView, Text, Alert} from 'react-native';
 import {useValidation} from 'react-native-form-validator';
+import {firebaseRegister} from '../../library/methods/firebaseRegister';
 import TextBox from '../../components/TextBox/TextBox';
 import TextBoxWithButton from '../../components/TextBoxWithButton/TextBoxWithButton';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import CheckBoxWithLabel from '../../components/CheckBoxWithLabel/CheckBoxWithLabel';
 import InputLabel from '../../components/InputLabel/InputLabel';
 import {styles} from './RegisterViewStyle';
+import Spinner from '../../components/Spinner/Spinner';
 
 const RegisterView = ({navigation}) => {
   const [firstName, setTextFirstName] = useState('');
   const [email, setTextEmail] = useState('');
-  const [password,setTextPassword] = useState('');
+  const [password, setTextPassword] = useState('');
   const [termsCheckBox, setTermsCheckBox] = useState(true);
   const [subscribeCheckBox, setSubscribeCheckBox] = useState(false);
-  
+  const [loading, setLoading] = useState(false);
+
   const createNewUser = () => {
-    Alert.alert('Go'); 
+    firebaseRegister(firstName, email, password)
+      .then(() => {
+        navigation.navigate('MyFlights');
+      })
+      .catch(() => {
+        Alert.alert('The register failed');
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   const {validate, isFormValid, getErrorsInField} = useValidation({
-    state: { firstName, email, password, }
+    state: { firstName, email, password }
   });
-  
+
   const SingUp = () => {
     validate({
-      firstName: { required: true  },
+      firstName: { required: true },
       email: { email: true, required: true},
       password: { minlength: 8, hasNumber:true, hasSpecialCharacter:true, required: true},
     });
-    if (isFormValid()){
+    if(isFormValid()){
+      setLoading(true);
       createNewUser();
     }
   };
 
   return(
-    <ScrollView style={styles.container}>
-      <Text style={styles.title}>Sign Up</Text>
-      <View>
-        <InputLabel style={styles.textInputLabel} errorMessages={getErrorsInField('firstName')}>First Name</InputLabel>
-        <TextBox value={firstName} onChange={setTextFirstName}/>
+    <>
+      {loading && <Spinner text='loging in'/>}
+      <ScrollView style={styles.container}>
+        <Text style={styles.title}>Sign Up</Text>
+        <View>
+          <InputLabel style={styles.textInputLabel} errorMessages={getErrorsInField('firstName')}>First Name</InputLabel>
+          <TextBox value={firstName} onChange={setTextFirstName}/>
 
-        <InputLabel style={styles.textInputLabel} errorMessages={getErrorsInField('email')}>Email</InputLabel>
-        <TextBox value={email} onChange={setTextEmail}/>
-        <InputLabel style={styles.textInputLabel} errorMessages={getErrorsInField('password')}>Password</InputLabel>
-        
-        <TextBoxWithButton type='password' value={password} onChange={setTextPassword} />        
-        <Text style={styles.passwordMessage}>
-          Use 8 or more characters with a mix of letters, numbers, and symbols.
-        </Text>
-        <View style={styles.checkBoxContainer}>
-          <CheckBoxWithLabel value={termsCheckBox} changeValue={setTermsCheckBox}>
-            I agree to the Terms and Privacy policy.
-          </CheckBoxWithLabel>
-          <CheckBoxWithLabel value={subscribeCheckBox} changeValue={setSubscribeCheckBox}>
-            Subscribe for select product updates
-          </CheckBoxWithLabel>
-        </View>
-        <View>          
-          <CustomButton disable={true} onPress={SingUp} text='Sign Up'/>
-          <Text style={styles.centerSelf}>or</Text>
-          <CustomButton text='Sign Up with Google' />
-        </View>
-        <View style={styles.labelContainer}>
-          <Text style={styles.label}>
-            Already have an account? <Text style={styles.sectionIn} onPress={() => navigation.navigate('Login')}>Log in</Text> 
+          <InputLabel style={styles.textInputLabel} errorMessages={getErrorsInField('email')}>Email</InputLabel>
+          <TextBox value={email} onChange={setTextEmail}/>
+          <InputLabel style={styles.textInputLabel} errorMessages={getErrorsInField('password')}>Password</InputLabel>
+
+          <TextBoxWithButton type='password' value={password} onChange={setTextPassword} />
+          <Text style={styles.passwordMessage}>
+            Use 8 or more characters with a mix of letters, numbers, and symbols.
           </Text>
+          <View style={styles.checkBoxContainer}>
+            <CheckBoxWithLabel value={termsCheckBox} changeValue={setTermsCheckBox}>
+              I agree to the Terms and Privacy policy.
+            </CheckBoxWithLabel>
+            <CheckBoxWithLabel value={subscribeCheckBox} changeValue={setSubscribeCheckBox}>
+              Subscribe for select product updates
+            </CheckBoxWithLabel>
+          </View>
+          <View>
+            <CustomButton disable={true} onPress={SingUp} text='Sign Up'/>
+            <Text style={styles.centerSelf}>or</Text>
+            <CustomButton text='Sign Up with Google' />
+          </View>
+          <View style={styles.labelContainer}>
+            <Text style={styles.label}>
+              Already have an account? <Text style={styles.sectionIn} onPress={() => navigation.navigate('Login')}>Log in</Text>
+            </Text>
+          </View>
         </View>
-      </View>
-    </ScrollView> 
+      </ScrollView>
+    </>
   );
 };
 
