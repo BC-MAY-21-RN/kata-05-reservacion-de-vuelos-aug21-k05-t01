@@ -22,7 +22,7 @@ export const firebaseRegister = (name, email, password) => {
 };
 
 const createInitialUserData = () => {
-  /*firestore()
+  firestore()
     .collection('bookings')
     .doc(auth().currentUser.uid)
     .get()
@@ -32,5 +32,5 @@ const createInitialUserData = () => {
           flights: [],
         });
       }
-    });*/
+    });
 };
