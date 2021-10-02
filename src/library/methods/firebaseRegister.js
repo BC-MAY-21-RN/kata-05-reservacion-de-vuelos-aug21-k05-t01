@@ -9,9 +9,7 @@ export const firebaseRegister = (name, email, password) => {
       user
       .updateProfile({displayName: name})
       .then(
-        () => resolve('User was sucessfully created & signed in'),
-        createInitialUserData(),
-        );
+        () => resolve('User was sucessfully created & signed in'));
       })
       .catch(error => {
         if (error.code === 'auth/email-already-in-use') {
@@ -21,16 +19,4 @@ export const firebaseRegister = (name, email, password) => {
   });
 };
 
-const createInitialUserData = () => {
-  /*firestore()
-    .collection('bookings')
-    .doc(auth().currentUser.uid)
-    .get()
-    .then(response => {
-      if (!response.exists) {
-        firestore().collection('bookings').doc(auth().currentUser.uid).set({
-          flights: [],
-        });
-      }
-    });*/
-};
+

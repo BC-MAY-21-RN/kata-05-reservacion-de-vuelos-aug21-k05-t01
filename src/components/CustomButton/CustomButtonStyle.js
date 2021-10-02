@@ -9,6 +9,13 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     justifyContent: 'center',
   },
+  activityButton: {
+    backgroundColor: '#b6b7ba',
+    width: '100%',
+    height: 45,
+    borderRadius: 8,
+    justifyContent: 'center',
+  },
   textButon: {
     fontSize: 15,
     color: colors.white,
