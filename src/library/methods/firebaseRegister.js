@@ -18,5 +18,3 @@ export const firebaseRegister = (name, email, password) => {
       });
   });
 };
-
-
