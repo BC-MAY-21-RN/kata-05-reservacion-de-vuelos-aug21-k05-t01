@@ -3,11 +3,16 @@ import {colors} from '../../util/colors';
 
 export const styles = StyleSheet.create({
   button: {
-    backgroundColor: colors.blue,
     width: '100%',
     height: 45,
     borderRadius: 8,
     justifyContent: 'center',
+  },
+  enabled: {
+    backgroundColor: colors.enabled_button
+  },
+  disabled: {
+    backgroundColor: colors.disabled_button,
   },
   textButon: {
     fontSize: 15,
