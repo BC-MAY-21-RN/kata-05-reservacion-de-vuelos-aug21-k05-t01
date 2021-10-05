@@ -82,7 +82,7 @@ const RegisterView = ({navigation}) => {
             </CheckBoxWithLabel>
           </View>
           <View>
-            <CustomButton  onPress={SingUp} enabled={activeButtons} text='Sign Up'/>
+            <CustomButton onPress={SingUp} enabled={activeButtons} text='Sign Up'/>
             <Text style={styles.centerSelf}>or</Text>
             <CustomButton enabled={activeButtons} text='Sign Up with Google' />
           </View>
