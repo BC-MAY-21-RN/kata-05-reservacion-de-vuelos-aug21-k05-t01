@@ -16,7 +16,7 @@ const Trip = () => {
   return (
     <View style={styles.container}>
       <View style={styles.containerTitle}>
-        <Contry code='BEG' name='Serbia' textDirection={styles.textLeft}/>
+        <Contry code='BEG' name='Serbia' textDirection={styles.textLeft} />
         <Icon
           name={'airplane'}
           style={styles.icon}
@@ -29,3 +29,4 @@ const Trip = () => {
 }
 
 export default Trip;
+

@@ -42,3 +42,4 @@ export const styles = StyleSheet.create({
     color: colors.lightGray,
   }
 })
+
