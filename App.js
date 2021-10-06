@@ -12,7 +12,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MyFlightsView from './src/screens/MyFlightsView/MyFlightsView';
 import BookingView from './src/screens/BookingView/BookingView';
-import BookingDateView from './src/screens/BookingView/BookingDateView';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,10 +23,10 @@ const App = () => {
           headerShown: false
         }}
       >
-        <Stack.Screen name='Booking' component={BookingDateView}/>
         <Stack.Screen name='Login' component={LoginView}/>
         <Stack.Screen name='Register' component={RegisterView}/>
         <Stack.Screen name='MyFlights' component={MyFlightsView}/>
+        <Stack.Screen name='Booking' component={BookingView}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

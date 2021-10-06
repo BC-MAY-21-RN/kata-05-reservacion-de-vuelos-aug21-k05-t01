@@ -4,10 +4,15 @@ import Calendar from '../../components/Calendar/Calendar';
 import BookingContainer from '../../components/BookingContainer/BookingContainer';
 import BookingTitle from '../../components/BookingTitle/BookingTitle';
 
-const BookingDateView = () => {
+const BookingDateView = ({navigation, route}) => {
   const [selectedDate, setSelectedDate] = useState({startDate: '', endDate: ''});
-  const handleNext = () => Alert.alert('Next');
-  const handleReturn = () => Alert.alert('return');
+  const handleNext = () => {
+    navigation.navigate('passengers', {
+      ...route.params,
+      selectedDate,
+    });
+  };
+  const handleReturn = () => navigation.goBack();
   const flyData = {
     date: '10 october 2021',
     fromCountryCode: 'BEG',
