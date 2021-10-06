@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Alert} from 'react-native';
 import Calendar from '../../components/Calendar/Calendar';
 import BookingContainer from '../../components/BookingContainer/BookingContainer';
+import BookingTitle from '../../components/BookingTitle/BookingTitle';
 
 const BookingDateView = () => {
   const [selectedDate, setSelectedDate] = useState({startDate: '', endDate: ''});
@@ -21,6 +22,7 @@ const BookingDateView = () => {
       returnBtn={handleReturn}
       flyData={flyData}
     >
+      <BookingTitle>Select date</BookingTitle>
       <Calendar 
         selectedDate={selectedDate}
         setSelectedDate={setSelectedDate}
