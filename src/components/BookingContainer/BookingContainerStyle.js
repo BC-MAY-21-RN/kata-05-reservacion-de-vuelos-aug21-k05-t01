@@ -30,8 +30,6 @@ export const styles = StyleSheet.create({
     marginTop: 30,
   },
   flyData: {
-    backgroundColor: colors.lightGray,
-    padding: 35,
     marginTop: 10,
   },
 });

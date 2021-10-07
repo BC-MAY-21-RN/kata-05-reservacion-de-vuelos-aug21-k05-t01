@@ -3,8 +3,9 @@ import CustomButton from '../CustomButton/CustomButton';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {View, TouchableOpacity, Text} from 'react-native';
 import {styles} from './BookingContainerStyle';
+import Trip from '../Trip/Trip';
 
-const BookingContainer = ({returnBtn, next, children}) => {
+const BookingContainer = ({returnBtn, next, children, flyData}) => {
   return(
     <View style={styles.bookingContainer}>
       <View style={styles.iconRowContainer}>
@@ -16,7 +17,7 @@ const BookingContainer = ({returnBtn, next, children}) => {
         </TouchableOpacity>
       </View>
       <View style={styles.flyData}>
-        <Text>-Fly data-</Text>
+        <Trip {...flyData} />
       </View>
       <View style={styles.contentContainer}>
         {children}
