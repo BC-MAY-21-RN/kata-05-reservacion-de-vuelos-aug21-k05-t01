@@ -29,4 +29,3 @@ const Trip = ({date = '', fromCountryCode = '', fromCountryName = '', toCountryC
 }
 
 export default Trip;
-

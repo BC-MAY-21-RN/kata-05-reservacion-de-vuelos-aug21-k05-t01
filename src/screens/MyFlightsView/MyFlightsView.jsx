@@ -3,10 +3,9 @@ import {ScrollView, Text} from 'react-native';
 import {TextCountry} from '../../components/TextCountry/TextCountry';
 
 const MyFlightsView = () => {
-  return(
+  return (
     <ScrollView>
-      <Text>My Flights</Text>
-      <TextCountry></TextCountry>
+      <TextCountry />
     </ScrollView>
   );
 };
