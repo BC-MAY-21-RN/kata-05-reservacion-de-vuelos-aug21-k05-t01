@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Afghanistan",
+    "code": "AF",
+    "cities": [
+      "Herat",
+      "Kabul",
+      "Kandahar",
+      "Molah",
+      "Rana",
+      "Shar",
+      "Sharif",
+      "Wazir Akbar Khan"
+    ]
+  },
+  {
+    "name": "Antigua and Barbuda",
+    "code": "AG",
+    "cities": [
+      "All Saints",
+      "Cassada Gardens",
+      "Codrington",
+      "Old Road",
+      "Parham",
+      "Woods"
+    ]
+  },
+  {
+    "name": "Bahamas",
+    "code": "BS",
+    "cities": [
+      "Andros Town",
+      "Dunmore Town",
+      "Freeport",
+      "Marsh Harbour",
+      "Nassau",
+      "Palmetto Point",
+      "Spanish Wells"
+    ]
+  },
+  {
+    "name": "Belize",
+    "code": "BZ",
+    "cities": [
+      "Belize City",
+      "Belmopan",
+      "Benque Viejo del Carmen",
+      "Freetown Sibun",
+      "Ladyville",
+      "San Ignacio",
+      "San Pedro Town"
+    ]
+  }
+  ,{
+    "name": "México",
+    "code": "MX",
+    "cities": [
+      "Aguascalientes",
+      "Baja California",
+      "Baja California Sur",
+      "Campeche",
+      "Chiapas",
+      "Chihuahua",
+      "Coahuila",
+      "Colima",
+      "Durango",
+      "Guanajuato",
+      "Guerrero",
+      "Hidalgo",
+      "Jalisco",
+      "México",
+      "Mexico City",
+      "Michoacán",
+      "Morelos",
+      "Nayarit",
+      "Nuevo León",
+      "Oaxaca",
+      "Puebla",
+      "Querétaro",
+      "Quintana Roo",
+      "San Luis Potosí",
+      "Sinaloa",
+      "Sonora",
+      "Tabasco",
+      "Tamaulipas",
+      "Tlaxcala",
+      "Veracruz",
+      "Yucatán",
+      "Zacatecas"
+    ]
+  }
+]
