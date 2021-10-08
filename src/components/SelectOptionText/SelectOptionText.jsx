@@ -11,7 +11,7 @@ const SelectOptionText = ({data, SelectState, action}) => {
       defaultButtonText="Select location"
       data={data}
       onSelect={(selectedItem, index) => {
-        action();
+        action(selectedItem);
       }}
     />
   );
