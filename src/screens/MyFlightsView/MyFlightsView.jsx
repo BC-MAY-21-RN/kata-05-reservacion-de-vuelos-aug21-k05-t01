@@ -1,6 +1,6 @@
 import React from 'react';
 import {ScrollView, Text, Alert} from 'react-native';
-import {TextCountry} from '../../components/TextCountry/TextCountry';
+import TextCountry from '../../components/TextCountry/TextCountry';
 
 const MyFlightsView = () => {
   return (
