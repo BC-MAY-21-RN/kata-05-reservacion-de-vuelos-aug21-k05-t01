@@ -36,6 +36,12 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center',
   },
+  textInputLabelCountry: {
+    fontWeight: 'bold',
+    width: '70%',
+    fontSize: 40,
+    color: colors.black,
+  },
   label: {
     fontSize: 16,
     alignSelf: 'center',
