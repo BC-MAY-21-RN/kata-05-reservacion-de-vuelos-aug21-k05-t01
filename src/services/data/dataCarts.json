@@ -1,0 +1,59 @@
+[
+  { "id":1,
+    "date": "September 3, 2000",
+    "passenger": "2 Passengers",
+    "fromCountryCode": "BAG",
+    "fromCountryName": "Serbia",
+    "toCountryCode": "AMS",
+    "toCountryName": "Netherlands"
+  },
+  { "id":2,
+    "date": "September 3, 2000",
+    "passenger": "2 Passengers",
+    "fromCountryCode": "BAG",
+    "fromCountryName": "Serbia",
+    "toCountryCode": "AMS",
+    "toCountryName": "Netherlands"
+  },
+  { "id":3,
+    "date": "September 3, 2000",
+    "passenger": "2 Passengers",
+    "fromCountryCode": "BAG",
+    "fromCountryName": "Serbia",
+    "toCountryCode": "AMS",
+    "toCountryName": "Netherlands"
+  },
+  { "id":4,
+    "date": "September 3, 2000",
+    "passenger": "2 Passengers",
+    "fromCountryCode": "BAG",
+    "fromCountryName": "Serbia",
+    "toCountryCode": "AMS",
+    "toCountryName": "Netherlands"
+  },
+  { "id":5,
+    "date": "September 3, 2000",
+    "passenger": "2 Passengers",
+    "fromCountryCode": "BAG",
+    "fromCountryName": "Serbia",
+    "toCountryCode": "AMS",
+    "toCountryName": "Netherlands"
+  },
+  { "id":6,
+    "date": "September 3, 2000",
+    "passenger": "2 Passengers",
+    "fromCountryCode": "BAG",
+    "fromCountryName": "Serbia",
+    "toCountryCode": "AMS",
+    "toCountryName": "Netherlands"
+  },
+  { "id":7,
+    "date": "May 9, 2000",
+    "passenger": "2 Passengers",
+    "fromCountryCode": "BAG",
+    "fromCountryName": "Mexico",
+    "toCountryCode": "AMS",
+    "toCountryName": "Netherlands"
+  }
+  
+]
