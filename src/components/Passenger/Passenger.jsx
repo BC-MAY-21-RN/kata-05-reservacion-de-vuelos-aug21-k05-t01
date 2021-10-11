@@ -4,19 +4,18 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {styles} from './PassengerStyle';
 import TextLabelBooking from '../TextLabeBooking/TextLabelBooking';
 
+const TouchableOutline = ({ iconName, oneMorePassanger }) => {
+  return (
+    <TouchableOpacity onPress={oneMorePassanger} style={styles.button}>
+      <Icon name={iconName} style={styles.icon} />
+    </TouchableOpacity>
+  )
+}
+
 export const Passenger = () => {
   const [passenger, setPassenger] = useState(1);
-  const oneMorePassanger = () => {
-    if (passenger < 5) {
-      setPassenger(passenger + 1);
-    }
-  };
-
-  const onePassengerLess = () => {
-    if (passenger > 1) {
-      setPassenger(passenger - 1);
-    }
-  };
+  const oneMorePassanger = () => passenger < 5 ? setPassenger(passenger + 1) : passenger;
+  const onePassengerLess = () => passenger > 1 ? setPassenger(passenger - 1) : passenger;
 
   return (
     <ScrollView>
@@ -26,13 +25,9 @@ export const Passenger = () => {
           text="How many passengers?"
         />
         <View style={styles.rowBoxPassenger}>
-          <TouchableOpacity onPress={onePassengerLess} style={styles.button}>
-            <Icon name="remove-outline" style={styles.icon} />
-          </TouchableOpacity>
+          <TouchableOutline iconName="remove-outline" oneMorePassanger={onePassengerLess} />
           <Text style={styles.textPassenger}>{passenger}</Text>
-          <TouchableOpacity onPress={oneMorePassanger} style={styles.button}>
-            <Icon name="add-outline" style={styles.icon} />
-          </TouchableOpacity>
+          <TouchableOutline iconName="add-outline" oneMorePassanger={oneMorePassanger} />
         </View>
       </View>
     </ScrollView>
