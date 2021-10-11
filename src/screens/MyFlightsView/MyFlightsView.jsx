@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Trip from '../../components/Trip/Trip';
 import {styles} from './MyFlightsViewStyle';
 import resourceData from '../../services/data/dataCarts.json';
+import TextCountry from '../../components/TextCountry/TextCountry';
 
 const MyFlightsView = ({navigation}) => {
   return (

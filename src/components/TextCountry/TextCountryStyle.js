@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     width: '100%',
-    height: 700,
+    marginTop: 65,
   },
   rowText: {
     left: 40,
@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
   },
   rowBoxSelect: {
     flexDirection: 'row',
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-start',
   },
   buttonSelect: {
     justifyContent: 'flex-start',
