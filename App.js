@@ -14,6 +14,8 @@ import MyFlightsView from './src/screens/MyFlightsView/MyFlightsView';
 import BookingFromView from './src/screens/BookingView/BookingFromView';
 import BookingDateView from './src/screens/BookingView/BookingDateView';
 import BookingToView from './src/screens/BookingView/BookingToView';
+import BookingPassengersView from './src/screens/BookingView/BookingPassengersView';
+import BookingFinishView from './src/screens/BookingView/BookingFinishView';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,10 +29,12 @@ const App = () => {
       >
         <Stack.Screen name='BookingFrom' component={BookingFromView}/>
         <Stack.Screen name='BookingTo' component={BookingToView}/>
+        <Stack.Screen name='BookingDate' component={BookingDateView}/>
+        <Stack.Screen name='BookingPassengers' component={BookingPassengersView}/>
+        <Stack.Screen name='BookingFinish' component={BookingFinishView}/>
         <Stack.Screen name='Login' component={LoginView}/>
         <Stack.Screen name='Register' component={RegisterView}/>
         <Stack.Screen name='MyFlights' component={MyFlightsView}/>
-        <Stack.Screen name='BookingDate' component={BookingDateView}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
