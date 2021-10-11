@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import BookingContainer from '../../components/BookingContainer/BookingContainer';
 import TextCountry from '../../components/TextCountry/TextCountry';
+import {getSelectedCountryAndCode} from '../../util/bookingUtils';
 
 const BookingFromView = ({navigation, route}) => {
   const [selectedOption, setSelectedOption] = useState('');
@@ -14,8 +15,7 @@ const BookingFromView = ({navigation, route}) => {
   const handleReturn = () => navigation.goBack();
 
   const handleChange = (selectedItem) => {
-    const [fromCountryName, city] = selectedItem.split(',');
-    const fromCountryCode = city.substring(0, 4).toUpperCase();
+    const [fromCountryName, fromCountryCode] = getSelectedCountryAndCode(selectedItem); 
     setSelectedOption({fromCountryName, fromCountryCode});
   };
 
