@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     borderBottomColor: colors.lightGray,
     borderBottomWidth: 0.5,
-    width: '90%',
+    width: '95%',
   },
   buttonSelectNext: {
     justifyContent: 'flex-start',

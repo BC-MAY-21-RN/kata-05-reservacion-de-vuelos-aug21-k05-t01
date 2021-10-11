@@ -5,7 +5,7 @@ import ResourceContries from '../../services/data/countries.json';
 import TextLabelBooking from '../TextLabeBooking/TextLabelBooking';
 import SelectOptionText from '../SelectOptionText/SelectOptionText';
 
-export const TextCountry = ({text = 'Where are you now?', onChange = () => {}}) => {
+const TextCountry = ({text = 'Where are you now?', onChange = () => {}}) => {
   const [showTextSelect, setShowTextSelect] = useState(true);
 
   const countries = ResourceContries.map(
@@ -17,20 +17,20 @@ export const TextCountry = ({text = 'Where are you now?', onChange = () => {}}) 
   };
 
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <TextLabelBooking
-          style={styles.textInputLabel}
-          text={text}
+    <View style={styles.container}>
+      <TextLabelBooking
+        style={styles.textInputLabel}
+        text={text}
+      />
+      <View style={styles.rowBoxSelect}>
+        <SelectOptionText
+          SelectState={showTextSelect}
+          action={activeSelectText}
+          data={countries}
         />
-        <View style={styles.rowBoxSelect}>
-          <SelectOptionText
-            SelectState={showTextSelect}
-            action={activeSelectText}
-            data={countries}
-          />
-        </View>
       </View>
-    </ScrollView>
+    </View>
   );
 };
+
+export default TextCountry;
