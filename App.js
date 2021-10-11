@@ -13,6 +13,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MyFlightsView from './src/screens/MyFlightsView/MyFlightsView';
 import BookingFromView from './src/screens/BookingView/BookingFromView';
 import BookingDateView from './src/screens/BookingView/BookingDateView';
+import BookingToView from './src/screens/BookingView/BookingToView';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +26,7 @@ const App = () => {
         }}
       >
         <Stack.Screen name='BookingFrom' component={BookingFromView}/>
+        <Stack.Screen name='BookingTo' component={BookingToView}/>
         <Stack.Screen name='Login' component={LoginView}/>
         <Stack.Screen name='Register' component={RegisterView}/>
         <Stack.Screen name='MyFlights' component={MyFlightsView}/>
