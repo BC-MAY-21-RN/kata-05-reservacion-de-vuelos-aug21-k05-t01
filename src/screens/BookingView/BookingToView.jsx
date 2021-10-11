@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import BookingContainer from '../../components/BookingContainer/BookingContainer';
 import TextCountry from '../../components/TextCountry/TextCountry';
-import {handleSelectorChange} from '../../util/bookingUtils';
+import {getSelectedCountryAndCode} from '../../util/bookingUtils';
 
-const BookingFromView = ({navigation, route}) => {
+const BookingToView = ({navigation, route}) => {
   const [selectedOption, setSelectedOption] = useState('');
   const handleNext = () => {
-    navigation.navigate('BookingTo', {
+    navigation.navigate('BookingDate', {
       ...route.params,
       ...selectedOption,
     });
@@ -15,19 +15,24 @@ const BookingFromView = ({navigation, route}) => {
   const handleReturn = () => navigation.goBack();
 
   const handleChange = (selectedItem) => {
-    handleSelectorChange(selectedItem, setSelectedOption);
+    const [toCountryName, toCountryCode] = getSelectedCountryAndCode(selectedItem); 
+    setSelectedOption({toCountryName, toCountryCode});
   };
+
+  const flyData = route.params;
 
   return(
     <BookingContainer
       next={handleNext}
       returnBtn={handleReturn}
+      flyData={flyData}
     >
       <TextCountry
         onChange={handleChange}
+        text='Where will you be flying to?'
       />
     </BookingContainer>
   );
 };
 
-export default BookingFromView;
+export default BookingToView;
