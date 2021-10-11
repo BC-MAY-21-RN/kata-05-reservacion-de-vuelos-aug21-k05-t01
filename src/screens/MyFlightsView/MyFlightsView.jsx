@@ -5,14 +5,10 @@ import Trip from '../../components/Trip/Trip';
 import {styles} from './MyFlightsViewStyle';
 import resourceData from '../../services/data/dataCarts.json';
 
-const MyFlightsView = () => {
-  const createNewflight = () => {
-    Alert.alert('Go');
-  };
+const MyFlightsView = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}> My flights</Text>
-
       <ScrollView style={styles.scrollView}>
         {resourceData?.map(value => {
           return (
@@ -31,12 +27,11 @@ const MyFlightsView = () => {
         })}
       </ScrollView>
       <View style={styles.sectionCreate}>
-        <TouchableOpacity onPress={createNewflight}>
+        <TouchableOpacity onPress={() => navigation.navigate('Country')}>
           <Icon name="add-circle" style={styles.icon} />
         </TouchableOpacity>
       </View>
     </View>
   );
 };
-
 export default MyFlightsView;
