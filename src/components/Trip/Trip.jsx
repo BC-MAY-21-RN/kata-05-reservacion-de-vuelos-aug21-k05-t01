@@ -14,7 +14,7 @@ const Country = ({code, name, textDirection}) => {
 
 const Trip = ({
   date = '',
-  passenger=2,
+  passenger='',
   fromCountryCode = '',
   fromCountryName = '',
   toCountryCode,
