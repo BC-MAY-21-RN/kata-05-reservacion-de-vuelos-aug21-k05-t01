@@ -2,11 +2,9 @@ import {StyleSheet} from 'react-native';
 import {colors} from '../../util/colors';
 export const styles = StyleSheet.create({
   container: {
-    display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'row',
     justifyContent: 'center',
     width: '100%',
-    height: 700,
   },
 
   textInputLabel: {
