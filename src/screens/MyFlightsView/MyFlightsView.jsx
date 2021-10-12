@@ -28,7 +28,7 @@ const MyFlightsView = ({navigation}) => {
         })}
       </ScrollView>
       <View style={styles.sectionCreate}>
-        <TouchableOpacity onPress={() => navigation.navigate('Country')}>
+        <TouchableOpacity onPress={() => navigation.navigate('BookingFrom')}>
           <Icon name="add-circle" style={styles.icon} />
         </TouchableOpacity>
       </View>

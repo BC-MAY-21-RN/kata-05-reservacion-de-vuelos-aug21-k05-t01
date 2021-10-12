@@ -9,7 +9,7 @@ const BookingPassengersView = ({navigation, route}) => {
   const handleNext = () => {
     navigation.navigate('BookingFinish', {
       ...route.params,
-      passengersNum,
+      passenger: passengersNum,
     });
   };  
 

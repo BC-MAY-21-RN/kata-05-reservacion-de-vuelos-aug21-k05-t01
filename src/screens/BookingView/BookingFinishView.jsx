@@ -1,15 +1,20 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 import BookingContainer from '../../components/BookingContainer/BookingContainer';
+import BookingTitle from '../../components/BookingTitle/BookingTitle';
 
 const BookingFinish = ({navigation, route}) => {
-  const data = route.params;
+  const handleBtn = () => navigation.navigate('MyFlights');
+  const flyData = route.params;
+
   return(
-    <View>
-      <Text>
-        {JSON.stringify(data)}
-      </Text>
-    </View>
+    <BookingContainer
+      next={handleBtn}
+      returnBtn={handleBtn}
+      flyData={flyData}
+    >
+      <BookingTitle>Your request was received.</BookingTitle>
+    </BookingContainer>
   );
 };
 
