@@ -7,9 +7,15 @@ const BookingDateView = ({navigation, route}) => {
   const [selectedDate, setSelectedDate] = useState({startDate: '', endDate: ''});
 
   const handleNext = () => {
+    const dateObject = new Date(selectedDate.startDate);
+    const date = {
+      day: dateObject.getDate(),
+      month: dateObject.getMonth() + 1,
+      year: dateObject.getFullYear(),
+    };
     navigation.navigate('BookingPassengers', {
       ...route.params,
-      selectedDate,
+      date,
     });
   };
   
