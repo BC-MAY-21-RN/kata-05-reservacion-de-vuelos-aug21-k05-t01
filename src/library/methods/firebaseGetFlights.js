@@ -7,5 +7,9 @@ export const getUserFlights = async () => {
     .collection('bookings')
     .doc(auth().currentUser.uid)
     .get();
-  return flights.data().flights;
+  if(flights.exists) {
+    return flights.data().flights;
+  } else {
+    return [];
+  }
 };
