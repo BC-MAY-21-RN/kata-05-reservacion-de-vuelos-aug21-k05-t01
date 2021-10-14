@@ -5,7 +5,7 @@
  * @format
  * @flow strict-local
  */
-import React from 'react';
+import React, {useEffect} from 'react';
 import RegisterView from './src/screens/RegisterView/RegisterView';
 import LoginView from './src/screens/LoginView/LoginView';
 import { NavigationContainer } from '@react-navigation/native';
@@ -16,10 +16,14 @@ import BookingDateView from './src/screens/BookingView/BookingDateView';
 import BookingToView from './src/screens/BookingView/BookingToView';
 import BookingPassengersView from './src/screens/BookingView/BookingPassengersView';
 import BookingFinishView from './src/screens/BookingView/BookingFinishView';
+import {setupGoogleSignIn} from './src/library/methods/googleSignIn';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
+  useEffect(() => {
+    setupGoogleSignIn();
+  }, []);
   return (
     <NavigationContainer>
       <Stack.Navigator

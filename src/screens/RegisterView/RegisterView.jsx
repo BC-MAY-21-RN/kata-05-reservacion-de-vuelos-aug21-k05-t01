@@ -9,6 +9,7 @@ import CheckBoxWithLabel from '../../components/CheckBoxWithLabel/CheckBoxWithLa
 import InputLabel from '../../components/InputLabel/InputLabel';
 import {styles} from './RegisterViewStyle';
 import Spinner from '../../components/Spinner/Spinner';
+import {onGoogleButtonPress} from '../../library/methods/googleSignIn';
 
 const RegisterView = ({navigation}) => {
   const [firstName, setTextFirstName] = useState('');
@@ -30,6 +31,19 @@ const RegisterView = ({navigation}) => {
       .finally(() => {
         setLoading(false);
       });
+  };
+
+  const handleGoogleSignUp = async () => {
+    try {
+      setLoading(true);
+      await onGoogleButtonPress();
+      setLoading(false);
+      navigation.navigate('MyFlights');
+    } catch(error) {
+      console.log('Error al iniciar con Google');
+      console.log(error);
+      setLoading(false);
+    }
   };
 
   const {validate, isFormValid, getErrorsInField} = useValidation({
@@ -84,7 +98,7 @@ const RegisterView = ({navigation}) => {
           <View>
             <CustomButton onPress={SingUp} enabled={activeButtons} text='Sign Up'/>
             <Text style={styles.centerSelf}>or</Text>
-            <CustomButton enabled={activeButtons} text='Sign Up with Google' />
+            <CustomButton onPress={handleGoogleSignUp} enabled={activeButtons} text='Sign Up with Google' />
           </View>
           <View style={styles.labelContainer}>
             <Text style={styles.label}>
