@@ -5,7 +5,6 @@ export const styles = StyleSheet.create({
   container: {
     width: '99%',
     padding: 5,
-
   },
   containerTitle: {
     display: 'flex',
@@ -33,11 +32,23 @@ export const styles = StyleSheet.create({
     marginTop: 8,
     left:5,
     alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'center',
   },
   text: {
-    alignItems: 'center',
     fontSize: 16,
     color: colors.lightGray,
+  },
+  countryLeft: {
+    fontSize: 16,
+    color: colors.lightGray,
+    alignItems: 'flex-start',
+  },  
+  countryRight: {
+    fontSize: 16,
+    color: colors.lightGray,
+    alignSelf: 'flex-end',
+    textAlign: 'right',
   },
   dateText: {
     padding: 5,
@@ -50,4 +61,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  colBox: {
+    width: '33%',
+  }
 })
