@@ -4,11 +4,11 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {styles} from './TripStyle';
 import {parsedMonths} from '../../util/bookingUtils';
 
-const Country = ({code, name, textDirection}) => {
+const Country = ({code, name, textDirection, countryDirection}) => {
   return (
     <View style={styles.colBox}>
       <Text style={textDirection}>{code}</Text>
-      <Text style={styles.text}>{name}</Text>
+      <Text style={countryDirection}>{name}</Text>
     </View>
   );
 };
@@ -34,12 +34,14 @@ const Trip = ({
           code={fromCountryCode}
           name={fromCountryName}
           textDirection={styles.textLeft}
+          countryDirection={styles.countryLeft}
         />
         <Icon name={'airplane'} style={styles.icon} />
         <Country
           code={toCountryCode}
           name={toCountryName}
           textDirection={styles.textRight}
+          countryDirection={styles.countryRight}
         />
       </View>
       <View style={styles.rowSectionDate}>
