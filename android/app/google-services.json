@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "723697772081",
-    "project_id": "flightreservation-632f1",
-    "storage_bucket": "flightreservation-632f1.appspot.com"
+    "project_number": "1064695565218",
+    "project_id": "proyectoreservaciondevuelos",
+    "storage_bucket": "proyectoreservaciondevuelos.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:723697772081:android:fda52e8f0af0275f5fd710",
+        "mobilesdk_app_id": "1:1064695565218:android:98fbfdfe0424912d9240fb",
         "android_client_info": {
-          "package_name": "com.reservaciondevuelos"
+          "package_name": "com.team1.reservacion"
         }
       },
       "oauth_client": [
         {
-          "client_id": "723697772081-kg035mcdg0vmctrj0damb81frqf0p5f6.apps.googleusercontent.com",
+          "client_id": "1064695565218-b3mlaqv5unqgm0a6md1kcscj5vk5o672.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.team1.reservacion",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1064695565218-u4igcl23o7kb6jp879jb328b8fm16n1a.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDRJJS9VeEHVlkXLPPnjrnZGQ4yGqsxwLo"
+          "current_key": "AIzaSyB1F5_UIBfRVThjSK8KM1y54GaP1jfGijc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "723697772081-kg035mcdg0vmctrj0damb81frqf0p5f6.apps.googleusercontent.com",
+              "client_id": "1064695565218-u4igcl23o7kb6jp879jb328b8fm16n1a.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
