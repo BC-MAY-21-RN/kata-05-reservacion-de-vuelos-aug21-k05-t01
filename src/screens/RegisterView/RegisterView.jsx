@@ -40,8 +40,6 @@ const RegisterView = ({navigation}) => {
       setLoading(false);
       navigation.navigate('MyFlights');
     } catch(error) {
-      console.log('Error al iniciar con Google');
-      console.log(error);
       setLoading(false);
     }
   };
@@ -98,7 +96,7 @@ const RegisterView = ({navigation}) => {
           <View>
             <CustomButton onPress={SingUp} enabled={activeButtons} text='Sign Up'/>
             <Text style={styles.centerSelf}>or</Text>
-            <CustomButton onPress={handleGoogleSignUp} enabled={activeButtons} text='Sign Up with Google' />
+            <CustomButton onPress={handleGoogleSignUp} text='Sign Up with Google' />
           </View>
           <View style={styles.labelContainer}>
             <Text style={styles.label}>
