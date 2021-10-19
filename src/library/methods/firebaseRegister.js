@@ -1,5 +1,5 @@
 import auth from '@react-native-firebase/auth';
-import firestore from '@react-native-firebase/firestore';
+import { createUserInitialData } from './firebaseCreateCollections';
 
 export const firebaseRegister = (name, email, password) => {
   return new Promise((resolve, reject) => {
@@ -21,18 +21,4 @@ export const firebaseRegister = (name, email, password) => {
         }
       });
   });
-};
-
-const createUserInitialData = async () => {
-  firestore()
-    .collection('bookings')
-    .doc(auth().currentUser.uid)
-    .get()
-    .then(response => {
-      if (!response.exists) {
-        firestore().collection('bookings').doc(auth().currentUser.uid).set({
-          flights: [],
-        });
-      }
-    });
 };
