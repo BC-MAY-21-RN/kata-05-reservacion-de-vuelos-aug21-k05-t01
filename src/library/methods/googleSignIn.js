@@ -1,8 +1,7 @@
 import auth from '@react-native-firebase/auth';
-import {GoogleSignin} from '@react-native-google-signin/google-signin';
-import {createUserInitialData} from './firebaseRegister';
-
-const WEB_CLIENT_ID = "1064695565218-u4igcl23o7kb6jp879jb328b8fm16n1a.apps.googleusercontent.com"
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import { createUserInitialData } from './firebaseCreateCollections';
+import { WEB_CLIENT_ID } from '@env';
 
 export const setupGoogleSignIn = () => {
   GoogleSignin.configure({
