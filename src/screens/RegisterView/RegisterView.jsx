@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react';
-import {View, ScrollView, Text, Alert} from 'react-native';
+import React, {useState} from 'react';
+import {View, ScrollView, Text} from 'react-native';
 import {useValidation} from 'react-native-form-validator';
-import {firebaseRegister} from '../../library/methods/firebaseRegister';
+import {createNewUser} from '../../library/methods/firebaseRegister';
 import TextBox from '../../components/TextBox/TextBox';
 import TextBoxWithButton from '../../components/TextBoxWithButton/TextBoxWithButton';
 import CustomButton from '../../components/CustomButton/CustomButton';
@@ -9,6 +9,7 @@ import CheckBoxWithLabel from '../../components/CheckBoxWithLabel/CheckBoxWithLa
 import InputLabel from '../../components/InputLabel/InputLabel';
 import {styles} from './RegisterViewStyle';
 import Spinner from '../../components/Spinner/Spinner';
+import {onGoogleButtonPress} from '../../library/methods/googleSignIn';
 
 const RegisterView = ({navigation}) => {
   const [firstName, setTextFirstName] = useState('');
@@ -16,20 +17,17 @@ const RegisterView = ({navigation}) => {
   const [password, setTextPassword] = useState('');
   const [termsCheckBox, setTermsCheckBox] = useState(false);
   const [subscribeCheckBox, setSubscribeCheckBox] = useState(false);
-  const [activeButtons, setActiveButtons] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const createNewUser = () => {
-    firebaseRegister(firstName, email, password)
-      .then(() => {
-        navigation.navigate('MyFlights');
-      })
-      .catch(() => {
-        Alert.alert('The register failed');
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+  const handleGoogleSignUp = async () => {
+    try {
+      setLoading(true);
+      await onGoogleButtonPress();
+      setLoading(false);
+      navigation.navigate('MyFlights');
+    } catch(error) {
+      setLoading(false);
+    }
   };
 
   const {validate, isFormValid, getErrorsInField} = useValidation({
@@ -44,18 +42,10 @@ const RegisterView = ({navigation}) => {
     });
     if(isFormValid()){
       setLoading(true);
-      createNewUser();
+      createNewUser(firstName, email, password, setLoading, navigation);
     }
   };
-  
-  useEffect(() => {
-    if(firstName.length > 0 && email.length > 0 && password.length > 0 && termsCheckBox == true){
-      setActiveButtons(true)
-    }else{
-      setActiveButtons(false)
-    }
-  }, [firstName !== '' && email !== '' && password !== '' && termsCheckBox == true])
-
+ 
   return(
     <>
       {loading && <Spinner text='loging in'/>}
@@ -82,9 +72,9 @@ const RegisterView = ({navigation}) => {
             </CheckBoxWithLabel>
           </View>
           <View>
-            <CustomButton onPress={SingUp} enabled={activeButtons} text='Sign Up'/>
+            <CustomButton onPress={SingUp} text='Sign Up'/>
             <Text style={styles.centerSelf}>or</Text>
-            <CustomButton enabled={activeButtons} text='Sign Up with Google' />
+            <CustomButton onPress={handleGoogleSignUp} text='Sign Up with Google' />
           </View>
           <View style={styles.labelContainer}>
             <Text style={styles.label}>
