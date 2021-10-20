@@ -12,7 +12,7 @@ export const setupGoogleSignIn = () => {
 export const onGoogleButtonPress = async () => {
   const { idToken } = await GoogleSignin.signIn();
   const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-  auth()
+  await auth()
     .signInWithCredential(googleCredential)
     .then(response => {
       if (response) {
