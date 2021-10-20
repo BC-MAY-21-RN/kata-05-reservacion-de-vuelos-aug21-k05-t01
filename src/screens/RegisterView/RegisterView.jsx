@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import {View, ScrollView, Text, Alert} from 'react-native';
+import React, {useState} from 'react';
+import {View, ScrollView, Text} from 'react-native';
 import {useValidation} from 'react-native-form-validator';
 import {createNewUser} from '../../library/methods/firebaseRegister';
 import TextBox from '../../components/TextBox/TextBox';
@@ -17,7 +17,6 @@ const RegisterView = ({navigation}) => {
   const [password, setTextPassword] = useState('');
   const [termsCheckBox, setTermsCheckBox] = useState(false);
   const [subscribeCheckBox, setSubscribeCheckBox] = useState(false);
-  const [activeButtons, setActiveButtons] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleGoogleSignUp = async () => {
@@ -46,15 +45,7 @@ const RegisterView = ({navigation}) => {
       createNewUser(firstName, email, password, setLoading, navigation);
     }
   };
-  
-  useEffect(() => {
-    if(firstName.length > 0 && email.length > 0 && password.length > 0 && termsCheckBox == true){
-      setActiveButtons(true)
-    }else{
-      setActiveButtons(false)
-    }
-  }, [firstName !== '' && email !== '' && password !== '' && termsCheckBox == true])
-
+ 
   return(
     <>
       {loading && <Spinner text='loging in'/>}
@@ -81,7 +72,7 @@ const RegisterView = ({navigation}) => {
             </CheckBoxWithLabel>
           </View>
           <View>
-            <CustomButton onPress={SingUp} enabled={activeButtons} text='Sign Up'/>
+            <CustomButton onPress={SingUp} text='Sign Up'/>
             <Text style={styles.centerSelf}>or</Text>
             <CustomButton onPress={handleGoogleSignUp} text='Sign Up with Google' />
           </View>
