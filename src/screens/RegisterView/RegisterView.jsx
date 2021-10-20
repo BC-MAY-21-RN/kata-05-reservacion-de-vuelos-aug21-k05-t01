@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {View, ScrollView, Text, Alert} from 'react-native';
 import {useValidation} from 'react-native-form-validator';
-import {firebaseRegister} from '../../library/methods/firebaseRegister';
+import {createNewUser} from '../../library/methods/firebaseRegister';
 import TextBox from '../../components/TextBox/TextBox';
 import TextBoxWithButton from '../../components/TextBoxWithButton/TextBoxWithButton';
 import CustomButton from '../../components/CustomButton/CustomButton';
@@ -19,19 +19,6 @@ const RegisterView = ({navigation}) => {
   const [subscribeCheckBox, setSubscribeCheckBox] = useState(false);
   const [activeButtons, setActiveButtons] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  const createNewUser = () => {
-    firebaseRegister(firstName, email, password)
-      .then(() => {
-        navigation.navigate('MyFlights');
-      })
-      .catch(() => {
-        Alert.alert('The register failed');
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  };
 
   const handleGoogleSignUp = async () => {
     try {
@@ -56,7 +43,7 @@ const RegisterView = ({navigation}) => {
     });
     if(isFormValid()){
       setLoading(true);
-      createNewUser();
+      createNewUser(firstName, email, password, setLoading, navigation);
     }
   };
   
