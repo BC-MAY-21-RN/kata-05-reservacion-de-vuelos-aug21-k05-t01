@@ -10,6 +10,7 @@ import InputLabel from '../../components/InputLabel/InputLabel';
 import {styles} from './RegisterViewStyle';
 import Spinner from '../../components/Spinner/Spinner';
 import {onGoogleButtonPress} from '../../library/methods/googleSignIn';
+import { useValidator } from '../../hooks/useValidator';
 
 const RegisterView = ({navigation}) => {
   const [firstName, setTextFirstName] = useState('');
@@ -18,6 +19,7 @@ const RegisterView = ({navigation}) => {
   const [termsCheckBox, setTermsCheckBox] = useState(false);
   const [subscribeCheckBox, setSubscribeCheckBox] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isFormInputsValid, setIsFormInputsValid] = useValidator({firstName, email, password, termsCheckBox});
 
   const handleGoogleSignUp = async () => {
     try {
@@ -72,7 +74,7 @@ const RegisterView = ({navigation}) => {
             </CheckBoxWithLabel>
           </View>
           <View>
-            <CustomButton onPress={SingUp} text='Sign Up'/>
+            <CustomButton onPress={SingUp} enabled={isFormInputsValid} text='Sign Up'/>
             <Text style={styles.centerSelf}>or</Text>
             <CustomButton onPress={handleGoogleSignUp} text='Sign Up with Google' />
           </View>
